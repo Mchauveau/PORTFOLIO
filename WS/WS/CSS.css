@@ -1,0 +1,220 @@
+/* Importation des polices Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display&display=swap');
+
+/* Réinitialisation des styles par défaut du navigateur */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    margin-top: 80px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
+    color: #e55e3e; /* Nouvelle couleur principale */
+    border-bottom: 2px solid #eee;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease, padding 0.3s ease; /* Transition pour le changement de couleur et de padding */
+    padding: 20px 0; /* Ajout de padding pour agrandir légèrement le header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère pour le header */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px; /* Reduced padding */
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.logo img {
+    height: 40px; /* Ajuster la hauteur du logo */
+    margin-right: 10px; /* Marge à droite du logo */
+    width: auto;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 50px; /* Légèrement plus grande taille de police */
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1); /* Ombre sous le texte */
+    font-family: 'Playfair Display', serif;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: inherit;
+}
+h2 {
+    text-align: center;
+}
+nav {
+    display: flex;
+    gap: 15px; /* Adds space between navigation links */
+}
+
+nav a {
+    color: #e55e3e; /* Nouvelle couleur principale */
+    text-decoration: none;
+    padding: 10px 0;
+    font-size: 18px;
+    position: relative;
+    transition: color 0.3s ease;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1); /* Ombre sous le texte */
+}
+
+nav a:after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: #e55e3e; /* Nouvelle couleur principale */
+    transition: width 0.3s ease;
+    width: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+}
+
+nav a:hover {
+    color: #000000;
+}
+
+nav a:hover:after {
+    width: 100%;
+}
+
+/* Main */
+main {
+    padding: 100px 20px 20px; /* Augmentation du padding pour compenser la hauteur du header */
+    max-width: 1200px;
+    margin: 0 auto;
+    opacity: 0; /* Initial opacity for fade-in effect */
+    transition: opacity 1s ease-in-out; /* Smooth transition for opacity */
+}
+
+/* Footer */
+footer {
+    background-color: #fff;
+    color: #e55e3e; /* Nouvelle couleur principale */
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    margin-top: 20px; /* Ajout de marge en haut du footer */
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 40px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: #e55e3e; /* Nouvelle couleur principale */
+    border-radius: 2px;
+    transform: translateX(-50%);
+}
+.timeline .event.right {
+    margin-left: 20px; /* Espacement entre les événements */      
+    width: 51%;
+}
+
+.timeline .event.left {
+    width: 49%;
+    margin-right: 20px; /* Espacement entre les événements */
+}
+
+.timeline .event.right,
+.timeline .event.left {
+    display: flex;
+    align-items: flex-start; /* Alignement vertical des contenus */
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding: 20px;
+    background-color: #fff; /* Fond blanc pour le cadre */
+    border: 2px solid #e55e3e; /* Bordure couleur principale */
+    border-radius: 5px;
+}
+.timeline .ligne {
+    display: flex;
+    justify-content: space-between; /* Pour espacer les événements à gauche et à droite */
+    margin-left: 20px; /* Espacement entre les événements */
+}
+
+.timeline .ligne .imageSco {
+    width: 127px; /* Taille de l'image */
+    height: 127px; /* Taille de l'image */
+    border: 4px solid #e55e3e; /* Bordure couleur principale */
+    border-radius: 50%; /* Forme de cercle */
+    overflow: hidden; /* Masquer le contenu qui dépasse */
+    margin-left: auto; /* Pour déplacer l'image vers la droite */
+    margin-right: auto; /* Pour déplacer l'image vers la gauche */
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.timeline .event .marker {
+    width: 20px;
+    height: 20px;
+    background-color: #e55e3e; /* Nouvelle couleur principale */
+    border-radius: 50%;
+    margin-top: 4px; /* Ajustement de la position verticale */
+}
+
+.timeline .event .date {
+    font-weight: bold;
+    color: #e55e3e; /* Couleur orange */
+    margin-bottom: 5px;
+    font-size: 16px; /* Taille de police ajustée pour la date */
+}
+
+.timeline .event .title {
+    font-size: 16px; /* Taille de police réduite pour le titre */
+    font-weight: bold;
+    margin-bottom: 5px; /* Espacement réduit entre le titre et la description */
+}
+
+.timeline .event .description {
+    font-size: 14px; /* Taille de police réduite pour la description */
+    line-height: 1.6;
+}
+
+.imageSco
+{
+    align-items: center;
+}
+/* Initial state for sections */
+main > section {
+    display: none;
+    opacity: 0;
+}
+
+/* Active section is displayed */
+main > section.active-section {
+    display: block;
+    opacity: 1;
+}
